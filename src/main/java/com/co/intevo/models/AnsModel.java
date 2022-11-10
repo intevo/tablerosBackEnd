@@ -9,20 +9,15 @@ public class AnsModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private long idAns;
-
-    @OneToOne
-    private FacturaModel factura;
-
-    @OneToOne
-    private CategoriasModel categorias;
     
+    private long idAns;
     private String descripcion;
+    private String nombreCategoria;
     private double cantidadAns;
     private double precioUnit;
     private double cantidadEntrega;
     private double valorTotal;
-    private String nombreCategoria;
+    private String idFactura;
  
     public AnsModel() {
     }
@@ -42,6 +37,14 @@ public class AnsModel {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getNombreCategoria() {
+        return nombreCategoria;
+    }
+
+    public void setNombreCategoria(String nombreCategoria) {
+        this.nombreCategoria = nombreCategoria;
     }
 
     public double getcantidadAns() {
@@ -68,30 +71,23 @@ public class AnsModel {
     }
 
     public double getValorTotal() {
-        double ans = 0;
         if(this.precioUnit > 0 && this.cantidadAns > 0){
-            ans = (this.precioUnit * this.cantidadAns);    
-            return ans;
+            valorTotal = (this.precioUnit * this.cantidadAns);    
+            return valorTotal;
         }else{
             return 0;
         }
     }
 
-
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
 
-
-    public String getNombreCategoria() {
-        return nombreCategoria;
+    public String getFactura() {
+        return idFactura;
     }
 
-    public void setNombreCategoria(String nombreCategoria) {
-        this.nombreCategoria = nombreCategoria;
+    public void setFactura(String idFactura) {
+        this.idFactura = idFactura;
     }
-
-    
-    
-    
 }
