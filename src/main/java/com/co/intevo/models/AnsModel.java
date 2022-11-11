@@ -70,9 +70,8 @@ public class AnsModel {
     public double getValorTotal() {
         double ans = 0;
         if(this.precioUnit > 0 && this.cantidadAns > 0){
-            ans = (this.precioUnit * this.cantidadAns);
-            this.valorTotal = ans;    
-            return valorTotal;
+            ans = (this.precioUnit * this.cantidadAns);    
+            return ans;
         }else{
             return 0;
         }
