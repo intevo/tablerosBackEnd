@@ -12,12 +12,10 @@ public class AnsModel {
     
     private long idAns;
     private String descripcion;
-    private String nombreCategoria;
-    private double cantidadAns;
-    private double precioUnit;
-    private double cantidadEntrega;
+    private double porcentaje;
+    private double valorFactura;
+    private double valorDescuento;
     private double valorTotal;
-    private String idFactura;
  
     public AnsModel() {
     }
@@ -39,40 +37,32 @@ public class AnsModel {
         this.descripcion = descripcion;
     }
 
-    public String getNombreCategoria() {
-        return nombreCategoria;
-    }
-
-    public void setNombreCategoria(String nombreCategoria) {
-        this.nombreCategoria = nombreCategoria;
-    }
-
-    public double getcantidadAns() {
-        return cantidadAns;
+    public double getPorcentaje() {
+        return porcentaje;
     }   
 
-    public void setcantidadAns(double cantidadAns) {
-        this.cantidadAns = cantidadAns;
+    public void setPorcentaje(double porcentaje) {
+        this.porcentaje = porcentaje;
     }
-    public double getPrecioUnit() {
-        return precioUnit;
+    public double getvalorFactura() {
+        return valorFactura;
     }
     
-    public void setPrecioUnit(double precioUnit) {
-        this.precioUnit = precioUnit;
+    public void setvalorFactura(double valorFactura) {
+        this.valorFactura = valorFactura;
     }
 
-    public double getcantidadEntrega() {
-        return cantidadEntrega;
+    public double getvalorDescuento() {
+        return valorDescuento;
     }
 
-    public void setcantidadEntrega(double cantidadEntrega) {
-        this.cantidadEntrega = cantidadEntrega;
+    public void setvalorDescuento(double valorDescuento) {
+        this.valorDescuento = valorDescuento;
     }
 
-    public double getValorTotal() {
-        if(this.precioUnit > 0 && this.cantidadAns > 0){
-            valorTotal = (this.precioUnit * this.cantidadAns);    
+       public double getValorTotal() {
+        if(this.valorFactura > 0 && this.valorDescuento > 0){
+            valorTotal = (this.valorFactura - this.valorDescuento);    
             return valorTotal;
         }else{
             return 0;
@@ -83,11 +73,4 @@ public class AnsModel {
         this.valorTotal = valorTotal;
     }
 
-    public String getFactura() {
-        return idFactura;
-    }
-
-    public void setFactura(String idFactura) {
-        this.idFactura = idFactura;
-    }
 }
