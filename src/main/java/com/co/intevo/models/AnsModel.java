@@ -1,5 +1,5 @@
 package com.co.intevo.models;
-
+//prueba
 import javax.persistence.*;
 
 @Entity

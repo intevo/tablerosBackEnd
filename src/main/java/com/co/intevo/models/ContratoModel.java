@@ -2,6 +2,8 @@ package com.co.intevo.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,9 +12,11 @@ import javax.persistence.Table;
 public class ContratoModel {
     @Id
     @Column(unique = false, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idContrato;
-    private String fechaInicio;
-    private String fechaFinalizacion;
+    private String numeroContrato;
+    private String fechaIncioContrato;
+    private String fechaFinalizacionContrato;
     private long valorContrato;
 
     public ContratoModel() {
@@ -25,21 +29,28 @@ public class ContratoModel {
     public void setIdContrato(long idContrato) {
         this.idContrato = idContrato;
     }
-
-    public String getFechaInicio() {
-        return fechaInicio;
+    public String getnumeroContrato() {
+        return numeroContrato;
     }
 
-    public void setFechaInicio(String fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setnumeroContrato(String numeroContrato) {
+        this.numeroContrato = numeroContrato;
     }
 
-    public String getFechaFinalizacion() {
-        return fechaFinalizacion;
+    public String getfechaIncioContrato() {
+        return fechaIncioContrato;
     }
 
-    public void setFechaFinalizacion(String fechaFinalizacion) {
-        this.fechaFinalizacion = fechaFinalizacion;
+    public void setfechaIncioContrato(String fechaIncioContrato) {
+        this.fechaIncioContrato = fechaIncioContrato;
+    }
+
+    public String getfechaFinalizacionContrato() {
+        return fechaFinalizacionContrato;
+    }
+
+    public void setfechaFinalizacionContrato(String fechaFinalizacionContrato) {
+        this.fechaFinalizacionContrato = fechaFinalizacionContrato;
     }
 
     public long getValorContrato() {
