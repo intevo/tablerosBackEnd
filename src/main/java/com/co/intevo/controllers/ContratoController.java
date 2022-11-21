@@ -23,7 +23,7 @@ public class ContratoController {
     public ArrayList<ContratoModel> getContrato(){
         return contratoService.getContrato();
     }
-    @PostMapping()
+    @PostMapping(path="/insert")
     public ContratoModel setContrato(@RequestBody ContratoModel contrato){
         return this.contratoService.setContrato(contrato);
     }

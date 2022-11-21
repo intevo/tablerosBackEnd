@@ -18,6 +18,7 @@ public class ContratoModel {
     private String fechaIncioContrato;
     private String fechaFinalizacionContrato;
     private long valorContrato;
+    private int prorroga;
 
     public ContratoModel() {
     }
@@ -61,11 +62,11 @@ public class ContratoModel {
         this.valorContrato = valorContrato;
     }
     
+    public int getProrroga() {
+        return prorroga;
+    }
     
-
-
-    
-
-
-    
+    public void prorroga(int prorroga) {
+        this.prorroga = prorroga;
+    }
 }
