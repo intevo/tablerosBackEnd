@@ -66,7 +66,7 @@ public class ContratoModel {
         return prorroga;
     }
     
-    public void prorroga(int prorroga) {
+    public void setProrroga(int prorroga) {
         this.prorroga = prorroga;
     }
 }
