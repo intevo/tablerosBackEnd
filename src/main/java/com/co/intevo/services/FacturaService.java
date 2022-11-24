@@ -1,5 +1,7 @@
 package com.co.intevo.services;
 import java.util.ArrayList;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.co.intevo.models.FacturaModel;
@@ -16,5 +18,9 @@ public class FacturaService {
 
     public FacturaModel setFactura(FacturaModel factura){
         return facturaRepository.save(factura);
+    }
+
+    public Optional<FacturaModel> getFacturaById(Long id) {
+        return null;
     }
 }

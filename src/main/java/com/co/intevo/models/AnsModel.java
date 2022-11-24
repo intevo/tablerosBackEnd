@@ -13,9 +13,10 @@ public class AnsModel {
     private long idAns;
     private String descripcion;
     private double porcentaje;
-    private double valorFactura;
-    private double valorDescuento;
-    private double valorTotal;
+    private long valorFactura;
+    private long valorDescuento;
+    private long valorTotal;
+    private long Factura;
  
     public AnsModel() {
     }
@@ -44,23 +45,23 @@ public class AnsModel {
     public void setPorcentaje(double porcentaje) {
         this.porcentaje = porcentaje;
     }
-    public double getvalorFactura() {
+    public long getvalorFactura() {
         return valorFactura;
     }
     
-    public void setvalorFactura(double valorFactura) {
+    public void setvalorFactura(long valorFactura) {
         this.valorFactura = valorFactura;
     }
 
-    public double getvalorDescuento() {
+    public long getvalorDescuento() {
         return valorDescuento;
     }
 
-    public void setvalorDescuento(double valorDescuento) {
+    public void setvalorDescuento(long valorDescuento) {
         this.valorDescuento = valorDescuento;
     }
 
-       public double getValorTotal() {
+       public long getValorTotal() {
         if(this.valorFactura > 0 && this.valorDescuento  > 0){
             valorTotal = (this.valorFactura - this.valorDescuento);    
             return valorTotal;
@@ -69,8 +70,15 @@ public class AnsModel {
         }
     }
 
-    public void setValorTotal(double valorTotal) {
+    public void setValorTotal(long valorTotal) {
         this.valorTotal = valorTotal;
     }
 
+    public long getFactura() {
+        return Factura;
+    }
+
+    public void setFactura(long Factura) {
+        this.Factura = Factura;
+    }
 }
