@@ -14,7 +14,10 @@ public class ContratoModel {
     @Column(unique = false, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idContrato;
+
+    @Column(unique = true, nullable = false)
     private String numeroContrato;
+    
     private String fechaIncioContrato;
     private String fechaFinalizacionContrato;
     private long valorContrato;

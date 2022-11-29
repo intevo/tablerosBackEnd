@@ -19,7 +19,7 @@ public class FacturaService {
     public FacturaModel setFactura(FacturaModel factura){
         return facturaRepository.save(factura);
     }
-
+    
     public Optional<FacturaModel> getFacturaById(Long id) {
         return null;
     }

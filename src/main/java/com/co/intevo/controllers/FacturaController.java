@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,8 +29,8 @@ public class FacturaController {
         return this.facturaService.setFactura(factura);
     }
 
-    @GetMapping(path="/{id}")
-    public Optional<FacturaModel> getFacturaById(@PathVariable("id") Long id){
+    @GetMapping(path="/{idFactura}")
+    public Optional<FacturaModel> getFacturaById(@PathVariable("idFactura") Long id){
         return this.facturaService.getFacturaById(id);
     }
 }
