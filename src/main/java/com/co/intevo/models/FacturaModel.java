@@ -9,7 +9,7 @@ public class FacturaModel {
     private long idFactura;
     private String fechaRegistro;
     private String fechaEntrega;
-    private double valorTotal;
+    private long valorTotal;
 
     public FacturaModel() {
     }
@@ -44,12 +44,12 @@ public class FacturaModel {
         this.fechaEntrega = fechaEntrega;
     }
 
-    public double getValorTotal() {
+    public long getValorTotal() {
         return valorTotal;
     }
 
 
-    public void setValorTotal(double valorTotal) {
+    public void setValorTotal(long valorTotal) {
         this.valorTotal = valorTotal;
     }
 
