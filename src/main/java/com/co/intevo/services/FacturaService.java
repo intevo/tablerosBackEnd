@@ -20,7 +20,8 @@ public class FacturaService {
         return facturaRepository.save(factura);
     }
     
+    // @Transactional(readonly = true)
     public Optional<FacturaModel> getFacturaById(Long id) {
-        return null;
+        return facturaRepository.findById(id);
     }
 }
