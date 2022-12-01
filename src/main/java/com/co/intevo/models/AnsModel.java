@@ -62,7 +62,8 @@ public class AnsModel {
     }
 
        public long getValorTotal() {
-        if(this.valorFactura > 0 && this.valorDescuento  > 0){
+        if(this.valorFactura >
+         0 && this.valorDescuento  > 0){
             valorTotal = (this.valorFactura - this.valorDescuento);    
             return valorTotal;
         }else{
