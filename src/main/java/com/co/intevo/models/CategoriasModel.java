@@ -10,8 +10,8 @@ public class CategoriasModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     public long idCategoria;
-
     public String nombreCategoria;
+    public String descripServicios;
 
     public CategoriasModel() {
     }
@@ -30,6 +30,14 @@ public class CategoriasModel {
 
     public void setNombreCategoria(String nombreCategoria) {
         this.nombreCategoria = nombreCategoria;
+    }
+
+    public String getdescripServicios() {
+        return descripServicios;
+    }
+
+    public void setdescripServicios(String descripServicios) {
+        this.descripServicios = descripServicios;
     }
 
     
