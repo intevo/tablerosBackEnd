@@ -18,6 +18,7 @@ public class AnsModel {
     private long valorTotal;
     private long Factura;
     private String observacionAns;
+    private int notaCredito;
  
     public AnsModel() {
     }
@@ -62,7 +63,7 @@ public class AnsModel {
         this.valorDescuento = valorDescuento;
     }
 
-       public long getValorTotal() {
+    public long getValorTotal() {
         if(this.valorFactura >= 0 && this.valorDescuento  >= 0){
             valorTotal = (this.valorFactura - this.valorDescuento);    
             return valorTotal;
@@ -89,5 +90,13 @@ public class AnsModel {
 
     public void setobservacionAns(String observacionAns) {
         this.observacionAns = observacionAns;
+    }
+
+    public int getnotaCredito() {
+        return notaCredito;
+    }
+
+    public void setnotaCredito(int notaCredito) {
+        this.notaCredito = notaCredito;
     }
 }
