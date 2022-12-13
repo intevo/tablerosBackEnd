@@ -19,7 +19,7 @@ public class AnsModel {
     private long Factura;
     private String observacionAns;
     private int notaCredito;
-    private String valorNotacredito;
+    private long valorNotacredito;
  
     public AnsModel() {
     }
@@ -101,11 +101,11 @@ public class AnsModel {
         this.notaCredito = notaCredito;
     }
 
-    public String getvalorNotacredito() {
+    public long getvalorNotacredito() {
         return valorNotacredito;
     }
 
-    public void setvalorNotacredito(String valorNotacredito) {
+    public void setvalorNotacredito(long valorNotacredito) {
         this.valorNotacredito = valorNotacredito;
     }
 }

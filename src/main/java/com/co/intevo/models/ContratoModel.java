@@ -20,7 +20,7 @@ public class ContratoModel {
     
     private String fechaIncioContrato;
     private String fechaFinalizacionContrato;
-    private String valorContrato;
+    private long valorContrato;
     private int prorroga;
 
     public ContratoModel() {
@@ -57,11 +57,11 @@ public class ContratoModel {
         this.fechaFinalizacionContrato = fechaFinalizacionContrato;
     }
 
-    public String getValorContrato() {
+    public long getValorContrato() {
         return valorContrato;
     }
     
-    public void setValorContrato(String valorContrato) {
+    public void setValorContrato(long valorContrato) {
         this.valorContrato = valorContrato;
     }
     
