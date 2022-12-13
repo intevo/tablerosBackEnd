@@ -33,4 +33,8 @@ public class ContratoService {
             return false;
         }
     }
+
+    public ContratoModel save(ContratoModel contrato) {
+        return contratoRepository.save(contrato);
+    }
 }

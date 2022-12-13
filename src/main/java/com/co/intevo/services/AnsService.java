@@ -17,7 +17,7 @@ public class AnsService {
     public ArrayList<AnsModel> getAns(){
         return (ArrayList<AnsModel>) ansRepository.findAll();
     }
-
+    
     public AnsModel setAns(AnsModel ans){
         return ansRepository.save(ans);
     }
@@ -33,5 +33,13 @@ public class AnsService {
         } catch(Exception e){
             return false;
         }
+    }
+
+    public Optional<AnsModel> findById(String id) {
+        return null;
+    }
+
+    public AnsModel save(AnsModel ans) {
+        return ansRepository.save(ans);
     }
 }

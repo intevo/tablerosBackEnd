@@ -3,10 +3,12 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,10 +31,17 @@ public class ContratoController {
     }
 
     @GetMapping(path="/{id}")
-    public Optional<ContratoModel> getcontratoById(@PathVariable("id") Long id){
+    public Optional<ContratoModel> getContratoById(@PathVariable("id") Long id){
         return this.contratoService.getContratoById(id);
     }
 
+    @CrossOrigin(origins = "http://localhost:8080")
+    @PutMapping(path="/{id}")
+    public ContratoModel update(@RequestBody ContratoModel contrato){
+        return contratoService.save(contrato);
+    }
+
+    @CrossOrigin(origins = "http://localhost:8080")
     @DeleteMapping(path="/{id}")
     public String deletecontrato(@PathVariable("id") Long id){
         boolean ok = this.contratoService.deleteContrato(id);
@@ -42,5 +51,4 @@ public class ContratoController {
             return "Error al eliminar contrato " + id;
         }
     }
-    
 }
