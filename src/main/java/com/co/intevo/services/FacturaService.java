@@ -24,4 +24,21 @@ public class FacturaService {
     public Optional<FacturaModel> getFacturaById(Long id) {
         return facturaRepository.findById(id);
     }
+
+    public boolean deleteFactura(Long id){
+        try{
+            facturaRepository.deleteById(id);
+            return true;
+        } catch(Exception e){
+            return false;
+        }
+    }
+
+       public Optional<FacturaModel> findById(String id) {
+        return null;
+    }
+
+    public FacturaModel save(FacturaModel factura) {
+        return facturaRepository.save(factura);
+    }
 }
