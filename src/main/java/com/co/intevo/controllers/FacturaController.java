@@ -42,11 +42,15 @@ public class FacturaController {
         return this.facturaService.getFacturaById(id);
     }
 
+    @PostMapping("/factura")
+    public FacturaModel findById(@PathVariable String id){
+        return facturaService.findById(id).get(); 
+    }
+
     @CrossOrigin(origins = "http://localhost:8080")
     @PutMapping(path="/{id}")
     public FacturaModel update(@RequestBody FacturaModel factura){
         return facturaService.save(factura);
-        // return ans;
     }
 
     @CrossOrigin(origins = "http://localhost:8080")
