@@ -6,10 +6,8 @@ import javax.persistence.*;
 @Table(name = "facturas")
 public class FacturaModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false, name = "idFac")
-    private long idFac;
-    private long numFactura;
+    @Column(unique = true, nullable = false, name = "idFactura")
+    private long idFactura;
     private String fechaRegistro;
     private String fechaEntrega;
     private long valorTotal;
@@ -18,27 +16,19 @@ public class FacturaModel {
     private String observacionFactura;
 
     public FacturaModel(
-            long idFac) {
-                this.idFac = idFac;
+            long idFactura) {
+                this.idFactura = idFactura;
     }
 
     public FacturaModel() {
     }
 
-    public long getIdFac() {
-        return idFac;
+    public long getidFactura() {
+        return idFactura;
     }
 
-    public void setIdFac(long idFac) {
-        this.idFac = idFac;
-    }
-
-    public long getnumFactura() {
-        return numFactura;
-    }
-
-    public void setnumFactura(long numFactura) {
-        this.numFactura = numFactura;
+    public void setidFactura(long idFactura) {
+        this.idFactura = idFactura;
     }
 
     public String getFechaRegistro() {
