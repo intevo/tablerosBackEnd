@@ -2,8 +2,6 @@ package com.co.intevo.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,13 +9,8 @@ import javax.persistence.Table;
 @Table(name ="contrato")
 public class ContratoModel {
     @Id
-    @Column(unique = false, nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false, name = "idContrato")
     private long idContrato;
-
-    @Column(unique = true, nullable = false)
-    private String numeroContrato;
-    
     private String fechaIncioContrato;
     private String fechaFinalizacionContrato;
     private long valorContrato;
@@ -26,19 +19,12 @@ public class ContratoModel {
     public ContratoModel() {
     }
 
-    public long getIdContrato() {
+    public long getidContrato() {
         return idContrato;
     }
 
-    public void setIdContrato(long idContrato) {
+    public void setidContrato(long idContrato) {
         this.idContrato = idContrato;
-    }
-    public String getnumeroContrato() {
-        return numeroContrato;
-    }
-
-    public void setnumeroContrato(String numeroContrato) {
-        this.numeroContrato = numeroContrato;
     }
 
     public String getfechaIncioContrato() {

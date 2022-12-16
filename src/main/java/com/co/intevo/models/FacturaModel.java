@@ -9,7 +9,7 @@ import javax.persistence.*;
 // @SQLDelete(sql = "DELETE ans WHERE factura = ?")
 public class FacturaModel {
     @Id
-    @Column(unique = true, nullable = false, name = "idFactura")
+    @Column(unique = true, nullable = false)
     private long idFactura;
     private String fechaRegistro;
     private String fechaEntrega;
@@ -17,20 +17,16 @@ public class FacturaModel {
     private String facturaTotal;
     private String descripcionServicios;
     private String observacionFactura;
-
-    public FacturaModel(
-            long idFactura) {
-                this.idFactura = idFactura;
-    }
+    private Long contrato;
 
     public FacturaModel() {
     }
 
-    public long getidFactura() {
+    public long getIdFactura() {
         return idFactura;
     }
 
-    public void setidFactura(long idFactura) {
+    public void setIdFactura(long idFactura) {
         this.idFactura = idFactura;
     }
 
@@ -80,6 +76,14 @@ public class FacturaModel {
 
     public void setobservacionFactura(String observacionFactura) {
         this.observacionFactura = observacionFactura;
+    }
+
+    public Long getContrato() {
+        return contrato;
+    }
+
+    public void setContrato(Long contrato) {
+        this.contrato = contrato;
     }
     
 }

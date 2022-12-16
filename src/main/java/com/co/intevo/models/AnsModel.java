@@ -24,7 +24,6 @@ public class AnsModel {
     public AnsModel() {
     }
 
-
     public long getIdAns() {
         return idAns;
     }

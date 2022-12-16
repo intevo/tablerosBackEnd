@@ -4,7 +4,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -63,17 +62,13 @@ public class FacturaController {
     public String deleteAns(@PathVariable("id") Long id){
 
         ArrayList<AnsModel> ans = ansService.getAns();
-        // return this.ansService.getAns();
-        
-
+      
         ans.forEach((e)->{
             if(e.getFactura() == id){
                 this.ansService.deleteAns(e.getIdAns());
                 // return e;
             }
         });
-
-        // return ans.get(0);
 
         boolean ok = this.facturaService.deleteFactura(id);
         if(ok){
