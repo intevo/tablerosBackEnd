@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.co.intevo.models.AnsModel;
 import com.co.intevo.models.FacturaModel;
+import com.co.intevo.services.AnsService;
 import com.co.intevo.services.FacturaService;
 
 @RestController
@@ -21,6 +23,8 @@ import com.co.intevo.services.FacturaService;
 public class FacturaController {
     @Autowired
     FacturaService facturaService;
+    @Autowired
+    AnsService ansService;
 
     @GetMapping()
     public ArrayList<FacturaModel> getFactura(){
@@ -53,9 +57,24 @@ public class FacturaController {
         return facturaService.save(factura);
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
-	@DeleteMapping(path="/{id}")
+    // @CrossOrigin(origins = "http://localhost:8080")
+	// @DeleteMapping(path="/{id}")
+	@GetMapping(path="/delete/{id}")
     public String deleteAns(@PathVariable("id") Long id){
+
+        ArrayList<AnsModel> ans = ansService.getAns();
+        // return this.ansService.getAns();
+        
+
+        ans.forEach((e)->{
+            if(e.getFactura() == id){
+                this.ansService.deleteAns(e.getIdAns());
+                // return e;
+            }
+        });
+
+        // return ans.get(0);
+
         boolean ok = this.facturaService.deleteFactura(id);
         if(ok){
             return "Factura eliminado exitosamente " + id;

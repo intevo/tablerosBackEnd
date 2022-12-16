@@ -2,8 +2,11 @@ package com.co.intevo.models;
 
 import javax.persistence.*;
 
+// import org.hibernate.annotations.SQLDelete;
+
 @Entity
 @Table(name = "facturas")
+// @SQLDelete(sql = "DELETE ans WHERE factura = ?")
 public class FacturaModel {
     @Id
     @Column(unique = true, nullable = false, name = "idFactura")

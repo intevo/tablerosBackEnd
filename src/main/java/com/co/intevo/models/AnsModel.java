@@ -78,7 +78,7 @@ public class AnsModel {
     }
 
     public long getFactura() {
-        return Factura;
+        return this.Factura;
     }
 
     public void setFactura(long Factura) {
