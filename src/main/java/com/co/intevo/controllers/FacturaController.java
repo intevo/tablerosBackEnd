@@ -63,11 +63,9 @@ public class FacturaController {
 
         ArrayList<AnsModel> ans = ansService.getAns();
       
-
         ans.forEach((e)->{
             if(e.getFactura() == id){
                 this.ansService.deleteAns(e.getIdAns());
-                // return e;
             }
         });
 
