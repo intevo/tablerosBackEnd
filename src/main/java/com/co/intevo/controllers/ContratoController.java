@@ -43,7 +43,8 @@ public class ContratoController {
     public ContratoModel update(@RequestBody ContratoModel contrato){
         return contratoService.save(contrato);
     }
-
+    
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(path="/delete/{id}")
     public String deleteAns(@PathVariable("id") Long id){
 
