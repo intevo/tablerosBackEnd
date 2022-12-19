@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.co.intevo.models.AnsModel;
 import com.co.intevo.models.ContratoModel;
 import com.co.intevo.models.FacturaModel;
 import com.co.intevo.services.AnsService;
@@ -50,17 +51,19 @@ public class ContratoController {
 
     //@CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(path="/delete/{id}")
-    public String deleteAns(@PathVariable("id") Long id){
-
+    public String deleteFactura(@PathVariable("id") long id){
         ArrayList<FacturaModel> factura = facturaService.getFactura();
-        
         factura.forEach((e)->{
             if(e.getContrato() == id){
+                ArrayList<AnsModel> ans = ansService.getAns();
+                ans.forEach((item)->{
+                    if(item.getFactura() == e.getIdFactura()){
+                        this.ansService.deleteAns(item.getIdAns());
+                    }
+                });
                 this.facturaService.deleteFactura(e.getIdFactura());
-                
             }
         });
-
         boolean ok = this.contratoService.deleteContrato(id);
         if(ok){
             return "Contrato eliminado exitosamente " + id;

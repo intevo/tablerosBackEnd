@@ -79,7 +79,7 @@ public class FacturaModel {
     }
 
     public Long getContrato() {
-        return contrato;
+        return this.contrato;
     }
 
     public void setContrato(Long contrato) {

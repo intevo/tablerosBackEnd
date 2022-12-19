@@ -47,7 +47,6 @@ public class AnsController {
     @PutMapping(path="/{id}")
     public AnsModel update(@RequestBody AnsModel ans){
         return ansService.save(ans);
-        // return ans;
     }
 
     @CrossOrigin(origins = "http://localhost:8080")
