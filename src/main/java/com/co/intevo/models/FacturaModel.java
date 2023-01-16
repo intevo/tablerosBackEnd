@@ -14,7 +14,9 @@ public class FacturaModel {
     private String fechaRegistro;
     private String fechaEntrega;
     private long valorTotal;
-    private String facturaTotal;
+    private long facturaTotal;
+    private long ValorDescuento;
+    private long valorTotalFacturado;
     private String descripcionServicios;
     private String observacionFactura;
     private Long contrato;
@@ -54,11 +56,27 @@ public class FacturaModel {
         this.valorTotal = valorTotal;
     }
 
-    public String getfacturaTotal() {
+    public long getValorDescuento() {
+        return ValorDescuento;
+    }
+
+    public void setValorDescuento(long ValorDescuento) {
+        this.ValorDescuento = ValorDescuento;
+    }
+
+    public long getvalorTotalFacturado() {
+        return valorTotalFacturado;
+    }
+
+    public void setvalorTotalFacturado(long valorTotalFacturado) {
+        this.valorTotalFacturado = valorTotalFacturado;
+    }
+
+    public long getfacturaTotal() {
         return facturaTotal;
     }
 
-    public void setfacturaTotal(String facturaTotal) {
+    public void setfacturaTotal(long facturaTotal) {
         this.facturaTotal = facturaTotal;
     }
 
