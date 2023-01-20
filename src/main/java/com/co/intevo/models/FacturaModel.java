@@ -20,7 +20,6 @@ public class FacturaModel {
     private String descripcionServicios;
     private String observacionFactura;
     private Long contrato;
-    private int  prorroga;
 
     public FacturaModel() {
     }
@@ -108,14 +107,6 @@ public class FacturaModel {
 
     public void setContrato(Long contrato) {
         this.contrato = contrato;
-    }
-
-    public int getProrroga() {
-        return this.prorroga;
-    }
-
-    public void setProrroga(int prorroga) {
-        this.prorroga = prorroga;
     }
     
 }
