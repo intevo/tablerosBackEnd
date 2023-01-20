@@ -13,9 +13,9 @@ public class AnsModel {
     private long idAns;
     private String descripcion;
     private double porcentaje;
-    private long valorFactura;
-    private long valorDescuento;
-    private long valorTotal;
+    // private long valorFactura;
+    // private long valorDescuento;
+    // private long valorTotal;
     private long Factura;
     private String observacionAns;
     private int notaCredito;
@@ -48,9 +48,9 @@ public class AnsModel {
     public void setPorcentaje(double porcentaje) {
         this.porcentaje = porcentaje;
     }
-    public long getvalorFactura() {
-        return valorFactura;
-    }
+    // public long getvalorFactura() {
+    //     return valorFactura;
+    // }
     
     // public void setvalorFactura(long valorFactura) {
     //     this.valorFactura = valorFactura;
