@@ -15,8 +15,8 @@ public class FacturaModel {
     private String fechaEntrega;
     private long valorTotal;
     private long facturaTotal;
-    private long ValorDescuento;
-    private long valorTotalFacturado;
+    private long valorDescuento;
+    // private long valorTotalFacturado;
     private String descripcionServicios;
     private String observacionFactura;
     private Long contrato;
@@ -50,7 +50,12 @@ public class FacturaModel {
     }
 
     public long getValorTotal() {
-        return valorTotal;
+        if(this.facturaTotal >= 0 && this.valorDescuento  >= 0){
+            valorTotal = (this.facturaTotal - this.valorDescuento);    
+            return valorTotal;
+        }else{
+            return 0;
+        }
     }
 
     public void setValorTotal(long valorTotal) {
@@ -58,20 +63,20 @@ public class FacturaModel {
     }
 
     public long getValorDescuento() {
-        return ValorDescuento;
+        return valorDescuento;
     }
 
-    public void setValorDescuento(long ValorDescuento) {
-        this.ValorDescuento = ValorDescuento;
+    public void setValorDescuento(long valorDescuento) {
+        this.valorDescuento = valorDescuento;
     }
 
-    public long getvalorTotalFacturado() {
-        return valorTotalFacturado;
-    }
+    // public long getvalorTotalFacturado() {
+    //     return valorTotalFacturado;
+    // }
 
-    public void setvalorTotalFacturado(long valorTotalFacturado) {
-        this.valorTotalFacturado = valorTotalFacturado;
-    }
+    // public void setvalorTotalFacturado(long valorTotalFacturado) {
+    //     this.valorTotalFacturado = valorTotalFacturado;
+    // }
 
     public long getfacturaTotal() {
         return facturaTotal;
