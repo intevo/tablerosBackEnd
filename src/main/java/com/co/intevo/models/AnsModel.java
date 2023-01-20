@@ -13,13 +13,13 @@ public class AnsModel {
     private long idAns;
     private String descripcion;
     private double porcentaje;
-    private long valorFactura;
-    private long valorDescuento;
-    private long valorTotal;
+    // private long valorFactura;
+    // private long valorDescuento;
     private long Factura;
     private String observacionAns;
     private int notaCredito;
     private long valorNotacredito;
+    // private long valorTotal;
  
     public AnsModel() {
     }
@@ -47,34 +47,35 @@ public class AnsModel {
     public void setPorcentaje(double porcentaje) {
         this.porcentaje = porcentaje;
     }
-    public long getvalorFactura() {
-        return valorFactura;
-    }
+
+    // public long getvalorFactura() {
+    //     return valorFactura;
+    // }
     
-    public void setvalorFactura(long valorFactura) {
-        this.valorFactura = valorFactura;
-    }
+    // public void setvalorFactura(long valorFactura) {
+    //     this.valorFactura = valorFactura;
+    // }
 
-    public long getvalorDescuento() {
-        return valorDescuento;
-    }
+    // public long getvalorDescuento() {
+    //     return valorDescuento;
+    // }
 
-    public void setvalorDescuento(long valorDescuento) {
-        this.valorDescuento = valorDescuento;
-    }
+    // public void setvalorDescuento(long valorDescuento) {
+    //     this.valorDescuento = valorDescuento;
+    // }
 
-    public long getValorTotal() {
-        if(this.valorFactura >= 0 && this.valorDescuento  >= 0){
-            valorTotal = (this.valorFactura - this.valorDescuento);    
-            return valorTotal;
-        }else{
-            return 0;
-        }
-    }
+    // public long getValorTotal() {
+    //     if(this.valorFactura >= 0 && this.valorDescuento  >= 0){
+    //         valorTotal = (this.valorFactura - this.valorDescuento);    
+    //         return valorTotal;
+    //     }else{
+    //         return 0;
+    //     }
+    // }
 
-    public void setValorTotal(long valorTotal) {
-        this.valorTotal = valorTotal;
-    }
+    // public void setValorTotal(long valorTotal) {
+    //     this.valorTotal = valorTotal;
+    // }
 
     public long getFactura() {
         return this.Factura;
